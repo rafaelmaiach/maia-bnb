@@ -1,0 +1,40 @@
+.main {
+	margin-top: 90px;
+	padding: 0 1rem;
+}
+
+.main > .row {
+	height: 100%;
+}
+
+.main .card {
+	background-color: var(--dark-white);
+	border: none;
+	box-shadow:  5px 5px 15px var(--gray), -5px -5px 15px var(--white);
+}
+
+.main .card-body {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.main .card-body label {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.main .form-control,
+.main span {
+	font-size: 16px;
+	width: auto;
+}
+
+.main .form-control {
+	background-color: transparent;
+	border: 1px solid var(--yellow);
+}
+
+.main span {
+	margin: 8px 8px 0 8px;
+}

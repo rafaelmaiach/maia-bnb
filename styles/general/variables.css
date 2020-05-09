@@ -1,9 +1,11 @@
 :root {
 	/* Colors */
 	--white: #FFFFFF;
+	--dark-white: #F5F5F5;
 	--black: #202020;
 	--yellow: #FAC035;
 	--light-gray: #F8F8F8;
+	--gray: #DDDDDD;
 
 	/* Viewports */
 	--viewport-3: 320px; /* smartphones, portrait iPhone, portrait 480 x 320 phones (Android) */

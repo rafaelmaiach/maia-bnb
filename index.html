@@ -30,6 +30,7 @@
 
 		<link rel="stylesheet" type="text/css" href="./styles/common-styles.css" />
 		<link rel="stylesheet" type="text/css" href="./styles/header.css" />
+		<link rel="stylesheet" type="text/css" href="./styles/main.css" />
 
 		<meta name="HandheldFriendly" content="true">
 		<meta name="renderer" content="webkit">
@@ -43,7 +44,27 @@
 				</a>
 			</nav>
 		</header>
-		<main id="main" class="main">
+		<main id="main" class="main container-fluid">
+			<div class="row">
+				<div class="col-12">
+					<div class="card">
+						<div class="card-body">
+							<div class="date-period">
+								<label for="startDate">
+									Check in
+									<input id="startDate" class="form-control" type="date">
+								</label>
+								<span>to</span>
+								<label for="endDate">
+									Check out
+									<input id="endDate" class="form-control" type="date">
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12"></div>
+			</div>
 		</main>
 
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
