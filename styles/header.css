@@ -1,0 +1,27 @@
+.header {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	margin: 0 auto;
+	max-width: var(--viewport-12);
+}
+
+.navbar {
+	background-color: var(--white) !important;
+}
+
+.navbar-light .navbar-brand {
+	font-weight: 700;
+	color: var(--black);
+	letter-spacing: 3px;
+}
+
+.navbar-brand > img {
+	margin-right: 5px;
+}
+
+@media (max-width: 600px) {
+	.navbar {
+		justify-content: center;
+	}
+}
