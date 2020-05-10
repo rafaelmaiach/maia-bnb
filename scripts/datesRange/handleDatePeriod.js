@@ -1,4 +1,5 @@
-import { formatDate } from '../helpers.js';
+import { formatDate, getDaysBetween } from '../helpers.js';
+import createdCards from '../cards/createCards.js'
 
 function getElements() {
 	const checkin = document.getElementById('startDate');
@@ -29,6 +30,11 @@ function onDateChange(event) {
 
 	checkin.setAttribute('max', checkoutVal);
 	checkout.setAttribute('min', checkinVal);
+
+	if (checkinVal && checkoutVal) {
+		const daysBetween = getDaysBetween(checkinVal, checkoutVal);
+		createdCards(daysBetween);
+	}
 };
 
 function listenForChanges() {

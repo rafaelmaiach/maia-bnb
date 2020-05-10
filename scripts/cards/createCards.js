@@ -1,22 +1,31 @@
 import api from './api.js';
+import { formatPrice } from '../helpers.js';
 
-function normalizeData(data) {
-	return data.map((value) => ({
-		name: value.name,
-		property_type: value.property_type,
-		photo: value.photo.replace(/x_large|xx_large/gi, 'medium'),
-		price: new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value.price),
-	}));
+function normalizeData(value, housingDays = 1) {
+	const { name, property_type, photo, price } = value;
+
+	const mediumPhoto = photo.replace(/x_large|xx_large/gi, 'medium');
+	const totalPrice = housingDays * price;
+
+	return {
+		name,
+		property_type,
+		photo: mediumPhoto,
+		price: formatPrice(price),
+		totalPrice: formatPrice(totalPrice),
+	};
 };
 
 function appendCards(container, cards) {
+	container.innerHTML = '';
+
 	cards.forEach((card) => {
 		container.appendChild(card);
 	})
 };
 
 function createSingleCard(properties) {
-	const { photo, property_type, name, price } = properties;
+	const { photo, property_type, name, price, totalPrice } = properties;
 
 	const cardStructure = document.createElement('div');
 	cardStructure.setAttribute('class', 'card-wrapper col-sm-12 col-md-6 col-lg-4');
@@ -28,7 +37,7 @@ function createSingleCard(properties) {
 				<h6>${property_type}</h6>
 				<h4>${name}</h4>
 				<span>${price} / night</span>
-				<span>Total: ${price}</span>
+				<span>Total: ${totalPrice}</span>
 			</div>
 		</div>
 	`;
@@ -43,10 +52,13 @@ function createCards(data) {
 	appendCards(container, cards);
 };
 
-async function setup() {
+async function setup(housingDays) {
+	console.log(1);
 	const data = await api();
-	const normalizedData = normalizeData(data);
+	const normalizedData = data.map(value => normalizeData(value, housingDays));
 	const cards = createCards(normalizedData);
 };
 
 setup();
+
+export default setup;
