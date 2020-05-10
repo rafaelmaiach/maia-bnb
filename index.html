@@ -31,6 +31,7 @@
 		<link rel="stylesheet" type="text/css" href="./styles/common-styles.css" />
 		<link rel="stylesheet" type="text/css" href="./styles/header.css" />
 		<link rel="stylesheet" type="text/css" href="./styles/main.css" />
+		<link rel="stylesheet" type="text/css" href="./styles/cards.css" />
 
 		<meta name="HandheldFriendly" content="true">
 		<meta name="renderer" content="webkit">
@@ -45,26 +46,30 @@
 			</nav>
 		</header>
 		<main id="main" class="main container-fluid">
-			<div class="row">
-				<div class="col-12">
-					<div class="card">
-						<div class="card-body">
-							<div class="date-period">
-								<label for="startDate">
-									Check in
-									<input id="startDate" class="form-control" type="date">
-								</label>
-								<span>to</span>
-								<label for="endDate">
-									Check out
-									<input id="endDate" class="form-control" type="date">
-								</label>
+				<div class="row">
+					<div class="col-12">
+						<div class="card">
+							<div class="card-body">
+								<div class="date-period">
+									<label for="startDate">
+										Check in
+										<input id="startDate" class="form-control" type="date">
+									</label>
+									<span>to</span>
+									<label for="endDate">
+										Check out
+										<input id="endDate" class="form-control" type="date">
+									</label>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-12"></div>
-			</div>
+				<div class="row">
+					<div class="col-12">
+						<div id="cards" class="row"></div>
+					</div>
+				</div>
 		</main>
 
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -72,5 +77,6 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 		<script type="module" src="./scripts/datesRange/handleDatePeriod.js"></script>
+		<script type="module" src="./scripts/cards/createCards.js"></script>
 	</body>
 </html>
